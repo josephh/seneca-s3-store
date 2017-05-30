@@ -1,0 +1,45 @@
+{
+  "name": "aws-s3-store",
+  "version": "0.0.1",
+  "description": "Seneca data store plugin for amazon web service s3",
+  "main": "lib/aws-s3-store.js",
+  "contributors": [
+    "Joseph Jobbings <josephh@rocketmail.com>"
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "seneca",
+    "plugin",
+    "store",
+    "aws",
+    "s3"
+  ],
+  "files": [
+    "README.md",
+    "LICENSE",
+    "lib"
+  ],
+  "scripts": {
+    "build": "docker-compose build",
+    "start": "docker-compose up",
+    "stop": "docker-compose kill",
+    "test": "lab -r console -o stdout -r console -o console.log -v -L -t 60",
+    "lint": "lab -dL"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.58.0",
+    "dotenv": "^4.0.0",
+    "seneca-entity": "^2.0.0"
+  },
+  "pre-commit": [
+    "test"
+  ],
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "eraro": "^0.4.1"
+  }
+}
