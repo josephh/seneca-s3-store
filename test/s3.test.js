@@ -25,21 +25,15 @@ describe('s3', function () {
   before({}, function (done) {
     si.use(require('../lib/aws-s3-store.js'), DbConfig)
     si.ready(done)
-    // TODO any pre-test setup???
+    // TODO further pre-test setup?
   })
 
-  it('loads an image file', function (done) {
+  it('loads an s3 file', function (done) {
     Async.series(
       {
         load: function (next) {
           var foo = si.make({name$: 'foo'})
           foo.load$({id: '1234'}, 0)
-          // foo.load$({id: '1234'}, function (err, res) {
-          //   Assert(!err)
-          //   // Assert.isNotNull(res.id)
-          //   next()
-          // })
-          console.log('some output')
           next()
         }
       },
